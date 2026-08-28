@@ -1,0 +1,10 @@
+{
+  "name": "نظام الجرد للجوال",
+  "description": "تطبيق متكامل لإستيراد وتصفح قاعدة بيانات الأصناف، تحديث الأسعار، وتأدية عمليات الجرد وإصدار التقارير اللحظية.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

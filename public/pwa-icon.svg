@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="50%" stop-color="#047857" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- Inner Subtle Ring -->
+  <rect x="24" y="24" width="464" height="464" rx="88" fill="none" stroke="url(#accentGrad)" stroke-width="4" stroke-opacity="0.3" />
+
+  <!-- Main Symbol Group with Shadow -->
+  <g filter="url(#shadow)" transform="translate(0, -20)">
+    <!-- Emerald Glowing Circle Backing -->
+    <circle cx="256" cy="230" r="140" fill="#ffffff" fill-opacity="0.12" />
+    <circle cx="256" cy="230" r="110" fill="#ffffff" />
+
+    <!-- Pharmacy Green Cross -->
+    <path d="M226 150 H286 V200 H336 V260 H286 V310 H226 V260 H176 V200 H226 Z" fill="url(#bgGrad)" />
+
+    <!-- Golden Healing Crescent / Leaf Curve -->
+    <path d="M 286,150 C 330,170 340,230 300,280 C 260,330 190,320 180,270 C 200,300 260,310 290,260 C 320,210 300,170 286,150 Z" fill="url(#goldGrad)" opacity="0.95" />
+
+    <!-- Center Healing Leaf -->
+    <path d="M 256,180 C 280,200 285,235 256,260 C 227,235 232,200 256,180 Z" fill="url(#accentGrad)" />
+  </g>
+
+  <!-- App Name Text: صيدلية راما -->
+  <text x="256" y="420" text-anchor="middle" fill="#ffffff" font-family="'Cairo', 'Tajawal', sans-serif" font-weight="800" font-size="44" letter-spacing="1">صيدلية راما</text>
+  <text x="256" y="458" text-anchor="middle" fill="#a7f3d0" font-family="'Cairo', 'Tajawal', sans-serif" font-weight="600" font-size="20" letter-spacing="2">RAMA PHARMACY</text>
+</svg>

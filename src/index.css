@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* إلغاء حركات السحب للأسفل للتحديث ومنع الاهتزاز أو إعادة التحميل العشوائية على الجوال */
+html, body, #root {
+  overscroll-behavior-y: none !important;
+  overscroll-behavior-x: none !important;
+  overscroll-behavior: none !important;
+  touch-action: pan-x pan-y;
+}
+
+@media print {
+  /* 1. إخفاء جميع عناصر الواجهة والتنقل والأزرار والبحث وأشرطة الأدوات نهائياً لضمان عدم شغلها أي ارتفاع (0px) */
+  header,
+  footer,
+  nav,
+  button,
+  input,
+  select,
+  textarea,
+  .no-print,
+  .print\:hidden,
+  .no-print-area {
+    display: none !important;
+  }
+
+  /* 2. إلغاء التمرير والهوامش والظلال عن جميع الأغلفة والحاويات لتدفق التقرير بحرية كامة */
+  html,
+  body,
+  #root,
+  main,
+  .fixed,
+  .fixed.inset-0,
+  [class*="max-h-"],
+  [class*="overflow-"],
+  .overflow-y-auto,
+  .overflow-x-auto,
+  .overflow-auto {
+    position: static !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    display: block !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    float: none !important;
+  }
+
+  /* 3. إخفاء العناصر غير المطبوعة عبر visibility مع جعل عناصر التقرير فقط هي الظاهرة */
+  body * {
+    visibility: hidden !important;
+  }
+
+  #printable-catalog-report, 
+  #printable-catalog-report *,
+  #printable-audit-report,
+  #printable-audit-report *,
+  #printable-full-audit-report,
+  #printable-full-audit-report * {
+    visibility: visible !important;
+  }
+
+  /* 4. وضع كرت التقرير المطبوع في التدفق الطبيعي للتمكين من الانكسار الطبيعي عبر الصفحات المتعددة بدون فراغات */
+  #printable-catalog-report,
+  #printable-audit-report,
+  #printable-full-audit-report {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    display: block !important;
+    float: none !important;
+  }
+
+  /* 5. إعدادات صفحة الطباعة A4 Portrait وضغط الهوامش بقدر الإمكان */
+  @page {
+    size: A4 portrait;
+    margin: 3mm 4mm 3mm 4mm;
+  }
+
+  /* 6. التذييل المكرر أسفل كل صفحة مطبوعة */
+  .print-running-footer {
+    background: #ffffff !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    border-top: 1px solid #000000 !important;
+    font-size: 10px !important;
+    font-weight: bold !important;
+    color: #000000 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    direction: rtl !important;
+    visibility: visible !important;
+  }
+
+  @media print {
+    @page {
+      size: A4 landscape;
+      margin: 6mm 8mm;
+    }
+
+    body {
+      counter-reset: page;
+    }
+
+    .print-page-number-curr::after {
+      content: counter(page);
+    }
+  }
+
+  html, body {
+    direction: rtl !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tbody {
+    display: table-row-group !important;
+  }
+
+  tfoot {
+    display: table-footer-group !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  th, td {
+    border-color: #334155 !important;
+    word-break: normal !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+
+  .bg-\[\#c2d7ed\] {
+    background-color: #c2d7ed !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .report-store-bar,
+  .report-footer,
+  .ReportHeader {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
+

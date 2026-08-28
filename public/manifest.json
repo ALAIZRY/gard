@@ -1,0 +1,24 @@
+{
+  "id": "com.ramapharmacy.inventory.pwa",
+  "name": "صيدلية راما - نظام إدارة وجرد الأصناف",
+  "short_name": "صيدلية راما",
+  "description": "نظام متكامل لإدارة وجرد الأصناف والمخزون أوفلاين بالكامل - صيدلية راما",
+  "theme_color": "#047857",
+  "background_color": "#064e3b",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "orientation": "portrait-primary",
+  "scope": "./",
+  "start_url": "./",
+  "dir": "rtl",
+  "lang": "ar",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "pwa-icon.svg",
+      "sizes": "512x512 192x192 128x128 64x64 32x32",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

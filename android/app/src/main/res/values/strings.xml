@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">GardApp</string>
+    <string name="title_activity_main">GardApp</string>
+    <string name="package_name">com.gard.app</string>
+    <string name="custom_url_scheme">com.gard.app</string>
+</resources>
