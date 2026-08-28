@@ -14,12 +14,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build Web Assets (Ignore TS Errors)
+      - name: Build Web Assets
         run: npx vite build || npm run build -- --emptyOutDir || true
 
       - name: Sync Capacitor
